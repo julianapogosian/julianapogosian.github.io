@@ -251,6 +251,24 @@
         transform: translateX(-50%);
     }
 }
+  @media (max-width: 600px) {
+  .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px 16px !important;
+  }
+
+  .process-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .process-grid p {
+    font-size: 15px !important;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+}
   </style>
 </head>
 
@@ -396,7 +414,7 @@
     from the initial concept sketch to the final details of the oil painting.
   </p>
 
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+  <div class="process-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
 
     <div>
       <img src="01-initial-sketch.jpg" alt="Initial concept sketch for The Golden Calf" style="display: block; width: 100%; height: auto;">
