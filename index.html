@@ -237,6 +237,15 @@
       .hero-image { order: -1; }
       .hero-image img { max-height: 520px; }
     }
+    /* Larger painting detail gallery */
+@media (min-width: 900px) {
+    #work .container > div[style*="margin-top: 48px"] {
+        width: min(1200px, 94vw);
+        max-width: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
   </style>
 </head>
 
