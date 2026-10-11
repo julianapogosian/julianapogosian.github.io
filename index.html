@@ -184,10 +184,15 @@
     }
 
     .story {
-      max-width: 790px;
-      color: var(--muted);
-      font-size: 17px;
-    }
+    max-width: 790px;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+#story .story:has(> div[style*="margin-top: 48px"]) {
+    max-width: none;
+    width: 100%;
+}
 
     .story p { margin-bottom: 22px; }
 
@@ -239,7 +244,7 @@
     }
     /* Larger painting detail gallery */
 @media (min-width: 900px) {
-    #work .container > div[style*="margin-top: 48px"] {
+    #story .story > div[style*="margin-top: 48px"] {
         width: min(1200px, 94vw);
         max-width: none;
         margin-left: 50%;
