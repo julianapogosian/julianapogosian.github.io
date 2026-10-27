@@ -6,9 +6,9 @@
   <meta name="google-site-verification" content="hDv78dO77Xg6UAs62yAziyt_x8U8DOdNEPirQrPXgDI" />
   <meta name="description" content="Juliana Pogosian is a contemporary symbolic artist. Discover Money Rules the World, an ongoing series of oil paintings exploring money, power and the human condition.">
   <title>Juliana Pogosian | Contemporary Symbolic Artist</title>
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
     :root {
       --bg: #171715;
@@ -18,7 +18,6 @@
       --gold: #c5a66a;
       --line: #454139;
     }
-
     * { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
@@ -42,7 +41,6 @@
       padding: 24px 0;
       border-bottom: 1px solid var(--line);
     }
-
     .nav {
       display: flex;
       justify-content: space-between;
@@ -67,7 +65,6 @@
     }
 
     nav a:hover, .text-link:hover { color: var(--gold); }
-
     .hero {
       padding: 76px 0 84px;
       display: grid;
@@ -91,7 +88,6 @@
     }
 
     h1 span { color: var(--gold); }
-
     .hero-copy {
       max-width: 480px;
       color: var(--muted);
@@ -113,13 +109,15 @@
       background: var(--gold);
       color: var(--bg);
     }
-
     .hero-image img {
       display: block;
-      width: 100%;
+      width: auto;
+      height: auto;
+      max-width: 100%;
       max-height: 660px;
       object-fit: contain;
-      background: #25241f;
+      background: transparent;
+      margin-inline: auto;
     }
 
     .image-note {
@@ -133,7 +131,6 @@
       padding: 76px 0;
       border-top: 1px solid var(--line);
     }
-
     .section-label {
       color: var(--gold);
       font: 11px Arial, sans-serif;
@@ -160,7 +157,6 @@
       gap: 54px;
       align-items: start;
     }
-
     .work-image img, .portrait img {
       display: block;
       width: 100%;
@@ -185,17 +181,20 @@
       text-transform: uppercase;
       margin-bottom: 24px;
     }
-
     .story {
     max-width: 790px;
     color: var(--muted);
     font-size: 17px;
 }
-
+.story--wide > p { max-width:790px; text-align:left; }
 #story .story:has(> div[style*="margin-top: 48px"]) {
     max-width: none;
     width: 100%;
 }
+#artist-statement .section-label,
+#artist-statement .container > h2,
+#artist-statement .story { margin-left:clamp(0px,6vw,80px); }
+#artist-statement .story { max-width:920px; }
 
     .story p { margin-bottom: 22px; }
 
@@ -210,14 +209,14 @@
       display: grid;
       grid-template-columns: 0.7fr 1.3fr;
       gap: 56px;
-      align-items: start;
+      align-items: center;
     }
+    .about-grid > div:last-child { min-width:0; max-width:560px; }
 
     .portrait img {
       max-width: 420px;
       margin: auto;
     }
-
     footer {
       padding: 30px 0;
       border-top: 1px solid var(--line);
@@ -232,7 +231,6 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-
     @media (max-width: 760px) {
       .nav { align-items: flex-start; flex-direction: column; }
       nav { gap: 14px; }
@@ -240,6 +238,7 @@
         grid-template-columns: 1fr;
         gap: 30px;
       }
+      .about-grid { align-items:start; }
       .hero { padding: 50px 0 60px; }
       section { padding: 56px 0; }
       .hero-image { order: -1; }
@@ -259,7 +258,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 24px 16px !important;
   }
-
   .process-grid img {
     width: 100%;
     height: auto;
@@ -272,9 +270,96 @@
     overflow-wrap: break-word;
   }
 }
+
+    :root { --bg:#0c0c0c; --panel:#151515; --text:#f1eee7; --muted:#aaa69e; --gold:#ad925f; --line:#38393a; --silver:#c9ced1; --silver-bright:#e5e7e8; }
+    html { scroll-padding-top:96px; }
+    body { position:relative; isolation:isolate; background:var(--bg); }
+    body::before {
+      position:absolute; z-index:-1; inset:0; content:""; pointer-events:none;
+      background-color:var(--bg);
+      background-image:
+        linear-gradient(180deg,transparent 0%,transparent 48%,rgba(12,12,12,.25) 60%,rgba(12,12,12,.84) 73%,#0c0c0c 88%,#0c0c0c 100%),
+        linear-gradient(180deg,rgba(12,12,12,.44) 0%,rgba(12,12,12,.52) 20%,rgba(12,12,12,.70) 38%,rgba(12,12,12,.90) 60%,#0c0c0c 82%),
+        linear-gradient(90deg,rgba(12,12,12,.30) 0%,rgba(12,12,12,.08) 48%,rgba(12,12,12,.34) 100%),
+        url("smoky-glass-background.webp");
+      background-size:100% calc(44.444vw + 200px),100% 100%,100% 100%,100% auto;
+      background-position:center top,center top,center top,center top;
+      background-repeat:no-repeat;
+    }
+    body::after { content:none; }
+    @media(max-width:1199px) {
+      body::before {
+        background-size:100% 733px,100% 100%,100% 100%,1200px auto;
+        background-position:center top,center top,center top,36% top;
+      }
+    }
+    header { position:sticky; top:0; z-index:20; padding:16px 0; background:rgba(12,12,12,.94); border-color:rgba(201,206,209,.2); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
+    .brand { color:var(--text); font-size:14px; letter-spacing:2.4px; white-space:nowrap; }
+    nav { gap:clamp(12px,1.7vw,24px); }
+    nav a { position:relative; isolation:isolate; overflow:hidden; padding:8px 0; color:var(--muted); transition:color .36s ease,text-shadow .36s ease; }
+    nav a::after { position:absolute; right:0; bottom:2px; left:0; height:1px; background:linear-gradient(90deg,transparent,rgba(173,146,95,.76) 18%,#ad925f 50%,rgba(173,146,95,.76) 82%,transparent); box-shadow:0 0 7px rgba(173,146,95,.38); content:""; opacity:0; transform:scaleX(.28); transform-origin:center; transition:opacity .36s ease,transform .36s ease; }
+    nav a::before { position:absolute; top:1px; bottom:4px; left:-60%; width:42%; background:linear-gradient(105deg,transparent,rgba(235,239,239,.12),rgba(173,146,95,.08),transparent); content:""; opacity:0; pointer-events:none; transform:skewX(-18deg) translateX(-120%); transition:opacity .3s ease,transform .72s ease; }
+    nav a:hover,nav a:focus-visible { color:#b39a6b; text-shadow:0 0 12px rgba(173,146,95,.17); }
+    nav a:hover::after,nav a:focus-visible::after { opacity:1; transform:scaleX(1); }
+    nav a:hover::before,nav a:focus-visible::before { opacity:1; transform:skewX(-18deg) translateX(390%); }
+    a:focus-visible,button:focus-visible { outline:1px solid rgba(201,206,209,.82); outline-offset:4px; }
+    .button { position:relative; isolation:isolate; overflow:hidden; border:1px solid rgba(201,206,209,.52); border-radius:2px; background:linear-gradient(135deg,rgba(244,247,247,.085),rgba(166,178,181,.025) 43%,rgba(173,146,95,.055)),rgba(13,15,16,.56); color:var(--text); box-shadow:inset 0 1px rgba(255,255,255,.16),inset 0 -1px rgba(173,146,95,.08),0 8px 28px rgba(0,0,0,.32); -webkit-backdrop-filter:blur(14px) saturate(125%); backdrop-filter:blur(14px) saturate(125%); text-shadow:0 1px 8px rgba(0,0,0,.36); transition:border-color .32s ease,color .36s ease,background-color .32s ease,box-shadow .36s ease,transform .32s ease; }
+    .button::before { position:absolute; z-index:0; top:-45%; bottom:-45%; left:-58%; width:44%; background:linear-gradient(105deg,transparent,rgba(239,243,244,.2) 45%,rgba(173,146,95,.14) 58%,transparent); content:""; opacity:0; pointer-events:none; transform:skewX(-18deg) translateX(-135%); transition:opacity .24s ease,transform .82s cubic-bezier(.2,.65,.3,1); }
+    .button::after { position:absolute; top:1px; right:12%; left:12%; height:1px; background:linear-gradient(90deg,transparent,rgba(238,241,241,.34),rgba(173,146,95,.2),transparent); content:""; opacity:.68; pointer-events:none; }
+    .button:hover { border-color:rgba(201,206,209,.76); background:linear-gradient(135deg,rgba(244,247,247,.105),rgba(166,178,181,.04) 43%,rgba(173,146,95,.09)),rgba(13,15,16,.64); color:#b39a6b; box-shadow:inset 0 1px rgba(255,255,255,.2),inset 0 -1px rgba(173,146,95,.12),0 10px 30px rgba(0,0,0,.38),0 0 18px rgba(173,146,95,.07); transform:translateY(-1px); }
+    .button:hover::before { opacity:.92; transform:skewX(-18deg) translateX(430%); }
+    .button:active { transform:translateY(0); }
+    .hero { gap:clamp(34px,5vw,72px); }
+    .hero-image img,.work-image img,.story-image img,.portrait img,.process-grid img,.detail-image { display:block; border:1px solid rgba(201,206,209,.16); }
+    .section-label,.eyebrow,.metadata { color:var(--gold); } .work-details h3 { letter-spacing:.01em; } .question { color:var(--text); }
+    .story--wide { width:100%; max-width:none; } .process-section,.detail-section { margin-top:64px; }
+    .process-section>h3,.detail-section>h3 { margin-top:0; color:var(--text); font-size:clamp(24px,3vw,34px); font-weight:normal; }
+    .process-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); grid-auto-rows:1fr; gap:22px; }
+    .process-grid>div { display:flex; min-width:0; flex-direction:column; padding:12px; border:1px solid var(--line); background:linear-gradient(145deg,rgba(255,255,255,.035),transparent 55%); }
+    .process-grid img { width:100%; height:auto; padding-block:2.5%; aspect-ratio:1/1; object-fit:contain; } .process-grid p { overflow-wrap:anywhere; }
+    @media (hover:hover) and (pointer:fine) {
+      .process-grid>div { overflow:hidden; }
+      .process-grid img { transition:transform .5s ease; }
+      .process-grid>div:hover img { transform:scale(1.04); }
+      .detail-gallery>div { transition:transform .36s ease; }
+      .detail-frame { transition:border-color .36s ease; }
+      .detail-gallery>div:hover { transform:translateY(-4px); }
+      .detail-gallery>div:hover .detail-frame { border-color:rgba(201,206,209,.48); }
+    }
+    .process-grid p:first-of-type,.detail-gallery p { color:var(--muted); font:11px/1.6 Arial,sans-serif; letter-spacing:.06em; text-transform:uppercase; }
+    .detail-section>h3 { text-align:center; }
+    .detail-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(16px,3vw,32px); max-width:1120px; margin-inline:auto; }
+    .detail-frame { width:100%; border:1px solid rgba(201,206,209,.25); }
+    .detail-image { width:100%; height:auto; object-fit:initial; }
+    .detail-gallery p { margin:12px 0 0; }
+    .story-image { margin-top:38px !important; } .story-image img { margin-inline:auto; }
+    .painting-process { display:grid; grid-template-columns:minmax(0,.72fr) minmax(0,1fr); align-items:center; gap:clamp(30px,5vw,64px); width:min(100%,1080px); margin:42px auto 0; }
+    .painting-process__copy { min-width:0; }
+    .painting-process__copy h3 { margin:0 0 12px; color:var(--text); font-size:clamp(24px,3vw,34px); font-weight:normal; }
+    .story .painting-process__description { max-width:46ch; margin:0; color:var(--muted); font-size:14px; line-height:1.7; }
+    .painting-process__player { display:block; width:auto; max-width:min(100%,540px); height:auto; max-height:calc(100vh - 140px); margin:0; object-fit:contain; justify-self:center; }
+    @media(max-width:760px) {
+      .painting-process { grid-template-columns:minmax(0,1fr); gap:22px; width:100%; margin-top:32px; }
+      .painting-process__player { max-width:100%; justify-self:start; }
+    }
+    .contact-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; max-width:900px; margin-top:32px; }
+    .contact-link { position:relative; isolation:isolate; overflow:hidden; display:inline-flex; width:100%; min-height:62px; align-items:center; justify-content:center; gap:11px; padding:12px 14px; border:1px solid rgba(201,206,209,.42); border-radius:2px; background:linear-gradient(135deg,rgba(244,247,247,.075),rgba(166,178,181,.02) 46%,rgba(173,146,95,.045)),rgba(13,15,16,.56); color:var(--text); font:12px/1.45 Arial,sans-serif; letter-spacing:.025em; box-shadow:inset 0 1px rgba(255,255,255,.14),inset 0 -1px rgba(173,146,95,.07),0 6px 22px rgba(0,0,0,.24); -webkit-backdrop-filter:blur(12px) saturate(120%); backdrop-filter:blur(12px) saturate(120%); transition:border-color .34s ease,color .36s ease,background-color .34s ease,box-shadow .36s ease,transform .34s ease; }
+    .contact-link::before { position:absolute; z-index:0; top:-45%; bottom:-45%; left:-58%; width:44%; background:linear-gradient(105deg,transparent,rgba(239,243,244,.18) 44%,rgba(173,146,95,.16) 58%,transparent); content:""; opacity:0; pointer-events:none; transform:skewX(-18deg) translateX(-135%); transition:opacity .24s ease,transform .82s cubic-bezier(.2,.65,.3,1); }
+    .contact-link::after { position:absolute; top:1px; right:14%; left:14%; height:1px; background:linear-gradient(90deg,transparent,rgba(238,241,241,.3),rgba(173,146,95,.18),transparent); content:""; opacity:.62; pointer-events:none; }
+    .contact-link > * { position:relative; z-index:1; }
+    .contact-link:hover,.contact-link:focus-visible { border-color:rgba(173,146,95,.72); background:linear-gradient(135deg,rgba(244,247,247,.09),rgba(166,178,181,.03) 46%,rgba(173,146,95,.075)),rgba(13,15,16,.65); color:#b39a6b; box-shadow:inset 0 1px rgba(255,255,255,.18),inset 0 -1px rgba(173,146,95,.1),0 8px 26px rgba(0,0,0,.32),0 0 16px rgba(173,146,95,.07); transform:translateY(-1px); }
+    .contact-link:hover::before,.contact-link:focus-visible::before { opacity:.9; transform:skewX(-18deg) translateX(430%); }
+    .contact-link:active { transform:translateY(0); }
+    .contact-icon { width:20px; height:20px; flex:0 0 20px; fill:none; stroke:currentColor; stroke-linecap:round; stroke-linejoin:round; stroke-width:1.5; }
+    .reveal { opacity:0; transform:translateY(16px); transition:opacity .7s ease,transform .7s cubic-bezier(.2,.65,.3,1); } .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media(max-width:900px) { .nav { align-items:flex-start; } nav { justify-content:flex-end; gap:8px 16px; } nav a { font-size:10px; letter-spacing:.075em; } .process-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:760px) { header { padding:12px 0; } .nav { flex-direction:column; gap:10px; } nav { width:100%; justify-content:flex-start; gap:4px 16px; padding-top:8px; border-top:1px solid var(--line); } nav a { padding:6px 0; } .hero,.work-grid,.about-grid { gap:28px; } .hero-image { order:-1; } .contact-links { gap:10px; } }
+    @media(max-width:760px) { #artist-statement .section-label,#artist-statement .container > h2,#artist-statement .story { margin-left:0; } #artist-statement .story { max-width:790px; } }
+    @media(max-width:600px) { .container { width:min(1400px,calc(100% - 36px)); } section { padding:52px 0; } .process-grid { gap:18px 12px; } .process-grid>div { padding:8px; } .process-grid p { font-size:14px !important; line-height:1.45; } .detail-gallery { grid-template-columns:1fr; max-width:440px; } .contact-links { display:grid; grid-template-columns:1fr; } .contact-link { width:100%; } }
+    @media(max-width:360px) { .process-grid { grid-template-columns:1fr !important; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } .reveal { opacity:1; transform:none; } .process-grid>div:hover img { transform:none; } .detail-gallery>div:hover { transform:none; } }
   </style>
 </head>
-
 <body>
   <header>
     <div class="container nav">
@@ -283,13 +368,12 @@
         <a href="#work">Selected Work</a>
         <a href="#story">The Story</a>
         <a href="#artist-statement">Artist Statement</a>
-        <a href="#biography">Biography</a>
         <a href="#about">About</a>
+        <a href="#biography">Biography</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
-
   <main>
     <div class="container hero" id="home">
       <div>
@@ -301,7 +385,6 @@
         </p>
         <a class="button" href="#work">Discover the Work</a>
       </div>
-
      <div class="hero-image">
   <img src="artist-with-painting-web.jpg"
        alt="Juliana Pogosian beside her painting The Golden Calf"
@@ -316,10 +399,9 @@
       <div class="container">
         <div class="section-label">01 — Selected Work</div>
         <h2>The Golden Calf</h2>
-
         <div class="work-grid">
           <div class="work-image">
-            <img src="the-golden-calf-web.jpg"
+            <img src="the-golden-calf-web.jpg" width="1200" height="1494"
      alt="The Golden Calf, an oil painting by Juliana Pogosian"
      loading="lazy"
      decoding="async">
@@ -328,12 +410,10 @@
           <div class="work-details">
             <h3>The Golden Calf</h3>
             <div class="metadata">Oil on canvas · 80 × 100 cm · 2026</div>
-
             <p>
               The Golden Calf is the first completed painting in my ongoing
               series Money Rules the World.
             </p>
-
             <p>
               A monumental golden bull dominates the upper part of the
               composition, towering above a crowd moving toward a distant
@@ -341,14 +421,12 @@
               gold, transforms the animal into a symbol of wealth elevated
               almost to the status of a deity.
             </p>
-
             <p>
               Below it, the crowd moves through a dark architectural space.
               Individual figures become part of a collective movement,
               suggesting how the pursuit of success can overshadow personal
               awareness and human connection.
             </p>
-
             <p>
               The contrast between gold and darkness reflects the tension
               between the promise of prosperity and the cost of pursuing it.
@@ -363,57 +441,50 @@
         </div>
       </div>
     </section>
-
     <section id="story">
       <div class="container">
         <div class="section-label">02 — The Story</div>
         <h2>Behind the Painting</h2>
-
-        <div class="story">
+        <div class="story story--wide">
          <p>
   The first work in the series is <em>The Golden Calf</em>. Dominating the composition is a monumental bull — a symbol of money, power, and wealth embodied in a mythological creature. In my interpretation, however, it is not a living being, but a soulless system that has taken the form of an ancient symbol. Its eyes are empty, yet they emit a mystical glow that draws the viewer’s gaze.
 </p>
-
 <p>
   In shaping the bull’s head, I sought to recreate the texture of gold, as though its surface were composed of gold coins. Its horns and nose are made of gold, while golden rivers pour from its nostrils in place of breath, promising extraordinary power to those who manage to reach this monument.
 </p>
-
 <p>
   Around the bull stand structures and columns resembling a cage or an enclosed space with no way out. To me, this is a metaphor for the system into which a person is born and within which they follow a predetermined course, guided by an established programme. Over time, they may cease to recognise that this path is not necessarily one they have chosen for themselves.
 </p>
-
 <p>
   In the lower part of the painting, I depicted a crowd striving towards the false light of the Golden Calf. All these people seek to reach the summit of wealth. Some seem unable to stop: in pursuit of an illusory goal, they lose their individuality. Some cover their faces with their hands; others are trampled underfoot and go unnoticed. Each figure embodies, in its own way, human fears, aspirations, and inner contradictions.
 </p>
-
 <p>
   But what do these people truly sacrifice in pursuit of a dream, luxury, and a beautiful life? Some abandon their childhood dreams, some lose their freedom, while others continue climbing, literally walking over the heads of others. And so the central question emerges: what intangible price will each of them pay, and what will they receive in return?
 </p>
-
 <p>
   I deliberately left the figures without eyes. To me, this symbolises blind devotion to an idea and the loss of the ability to see and understand what is happening around us. A person becomes so consumed by the pursuit of a goal that they stop noticing not only others, but themselves as well.
 </p>
-
 <p>
-  While working on this vast crowd, I felt deeply connected to each figure, as though I were standing before living people, each with their own emotions, anxieties, fears, and dreams. Transferring their images onto the canvas was emotionally difficult for me. Each time I raised my paintbrush to depict another figure, a face without eyes, or someone covering their face with their hands, I felt as though I were coming into contact with other people’s feelings and experiences. The people on the canvas ceased to be mere images — to me, they became alive. This was the most challenging part of the painting.
+  While working on this vast crowd, I felt deeply connected to each figure, as though I were standing before living people, each with their own emotions, anxieties, fears, and dreams. Transferring their images onto the canvas was emotionally difficult for me. Each time I raised my paintbrush to depict another figure, a face without eyes, or someone covering their face with their hands, I felt as though I were coming into contact with other people’s feelings and experiences.
+The people on the canvas ceased to be mere images — to me, they became alive. This was the most challenging part of the painting.
 </p>
-
 <p>
   In my view, <em>The Golden Calf</em> symbolises a system that has endured for centuries.
 </p>
-          <div style="margin-top: 40px;">
-  <h3 style="margin-bottom: 18px;">The Painting Process</h3>
-  <video controls playsinline preload="metadata"
-    style="display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto;">
+          <div class="painting-process">
+  <div class="painting-process__copy">
+    <h3>The Painting Process</h3>
+    <p class="painting-process__description">
+      A glimpse into the creation of The Golden Calf — from the first layers of underpainting to the final details. Watch the painting gradually emerge through colour, texture, and light.
+    </p>
+  </div>
+  <video class="painting-process__player" width="1080" height="1920" controls playsinline preload="metadata">
     <source src="painting-process-small.mp4" type="video/mp4">
     Your browser does not support video playback.
   </video>
-  <p style="font-size: 12px; color: #b8b1a4; margin-top: 10px;">
-    The process of creating The Golden Calf.
-  </p>
 </div>
           <div class="story-image" style="margin-top: 36px;">
-  <img src="the-golden-calf-interior-web.jpg"
+  <img src="the-golden-calf-interior-web.jpg" width="1875" height="2500"
      alt="The Golden Calf displayed on canvas in the artist's studio"
      loading="lazy"
      decoding="async"
@@ -422,73 +493,67 @@
     The Golden Calf — the finished painting on canvas.
   </p>
 </div>
-          <div style="margin-top: 48px;">
+          </div>
+          <div class="process-section">
   <h3 style="margin-bottom: 12px;">From Sketch to Final Painting</h3>
   <p style="margin-bottom: 28px;">
     A selection of moments from the creation of The Golden Calf,
     from the initial concept sketch to the final details of the oil painting.
   </p>
-
-  <div class="process-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px;">
+  <div class="process-grid">
 
     <div>
-      <img src="01-initial-sketch-web.jpg" alt="Initial concept sketch for The Golden Calf" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
+      <img src="01-initial-sketch-web.jpg" width="900" height="1200" alt="Initial concept sketch for The Golden Calf" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
       <p style="font-size: 12px; color: #b8b1a4;">01 — Initial Sketch</p>
       <p>Developing the visual concept for The Golden Calf.</p>
     </div>
-
     <div>
-      <img src="02-underpainting.jpg" alt="Early underpainting of The Golden Calf" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
+      <img src="02-underpainting.jpg" width="1320" height="1760" alt="Early underpainting of The Golden Calf" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
       <p style="font-size: 12px; color: #b8b1a4;">02 — The First Layers</p>
       <p>Establishing the composition, colour, and atmosphere.</p>
     </div>
-
     <div>
-      <img src="03-composition-and-form.jpg" alt="Developing the bull and architectural setting" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
+      <img src="03-composition-and-form.jpg" width="1320" height="1760" alt="Developing the bull and architectural setting" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
       <p style="font-size: 12px; color: #b8b1a4;">03 — Developing the Form</p>
       <p>Building the bull’s form within the architectural setting.</p>
     </div>
-
     <div>
-      <img src="04-golden-surface.jpg" alt="Applying gold tones and coin-like marks to the bull" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
+      <img src="04-golden-surface.jpg" width="1320" height="1760" alt="Applying gold tones and coin-like marks to the bull" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
       <p style="font-size: 12px; color: #b8b1a4;">04 — Building the Golden Surface</p>
       <p>Layering gold tones and coin-like marks across the surface.</p>
     </div>
-
     <div>
-      <img src="05-final-details.jpg" alt="Close-up of the details of the golden bull" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
+      <img src="05-final-details.jpg" width="1320" height="1760" alt="Close-up of the details of the golden bull" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
       <p style="font-size: 12px; color: #b8b1a4;">05 — Refining the Details</p>
       <p>Refining the highlights, textures, and smaller details.</p>
     </div>
-
     <div>
-      <img src="06-completed-painting.jpg" alt="The artist working on The Golden Calf" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
+      <img src="06-completed-painting.jpg" width="960" height="1280" alt="The artist working on The Golden Calf" loading="lazy" decoding="async" style="display: block; width: 100%; height: auto;">
       <p style="font-size: 12px; color: #b8b1a4;">06 — Final Touches</p>
       <p>Working on the final details of The Golden Calf.</p>
     </div>
-
   </div>
 </div>
-          <div style="margin-top: 48px;">
+          <div class="detail-section">
   <h3 style="margin-bottom: 24px;">Details of the Painting</h3>
- <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; width: 100%; max-width: 1200px; margin-left: 0;">
+ <div class="detail-gallery">
     <div>
-        <div style="width: 100%; aspect-ratio: 3 / 4; overflow: hidden;">
-            <img src="bull-detail-web.jpg"
+        <div class="detail-frame">
+            <img src="bull-detail-web.jpg" width="2023" height="2500"
      alt="Detail of the golden bull in The Golden Calf"
      loading="lazy"
      decoding="async"
-     style="display: block; width: 100%; height: 100%; object-fit: cover;">
+     class="detail-image">
         </div>
         <p style="font-size: 12px; color: #b8b1a4;">The Golden Bull</p>
     </div>
     <div>
-        <div style="width: 100%; aspect-ratio: 3 / 4; overflow: hidden;">
-            <img src="crowd-detail-web.jpg"
+        <div class="detail-frame">
+            <img src="crowd-detail-web.jpg" width="1536" height="1898"
      alt="Detail of the crowd moving toward the light"
      loading="lazy"
      decoding="async"
-     style="display: block; width: 100%; height: 100%; object-fit: cover;">
+     class="detail-image">
         </div>
         <p style="font-size: 12px; color: #b8b1a4;">The Crowd</p>
     </div>
@@ -497,41 +562,32 @@
         </div>
       </div>
     </section>
-
     <section id="artist-statement">
       <div class="container">
         <div class="section-label">03 — Artist Statement</div>
         <h2>My Artistic Vision</h2>
-
         <div class="story">
           <p>
             My artistic practice grows out of observing the world around me and reflecting on the contradictions of human nature. I am interested in how material values, the pursuit of power, and society’s prescribed ideals of success influence people, change their character and beliefs, and ultimately affect their inner world.
           </p>
-
           <p>
             It is impossible to live in this material world without noticing the place money occupies in it. Since my youth, I have observed how money influences human behaviour, habits, and relationships. In pursuing goals dictated by society, a person can seem to follow a road laid out by someone else. Along its winding paths, they may gradually lose touch with themselves and their inner identity.
           </p>
-
           <p>
             My reflections on the world around me gradually took artistic form. Observing people, social inequality, and the events shaping contemporary life, I increasingly felt the need to express my response through art. In January 2026, this growing inner tension led me to develop the series <em>Money Rules the World</em>.
           </p>
-
           <p>
             Recognising that people can become, in many ways, hostages to the systems in which they live, I wanted to explore what happens to them in the pursuit of wealth, power, and an idealised life. I am interested not only in what people seek to achieve, but also in what they are willing to sacrifice for their goals: freedom, childhood dreams, individuality, or the ability to see and understand others.
           </p>
-
           <p>
             I turn to symbolism because I believe it is one of the most expressive ways to convey feelings and ideas that cannot be explained directly. I am drawn to embedding meaning in symbols, details, and images, leaving room for viewers to form their own interpretations. I want people not merely to see a painting, but to feel it and discover something that resonates with their own experience. Symbolism allows me to address complex subjects without restricting the work to a single interpretation.
           </p>
-
           <p>
             I had worked with oil paint before, but with this series I chose to move away from creating images digitally and instead engage directly with paint and canvas. It was important for me to express my feelings not through a computer programme, but through traditional painting, where texture, colour, and the physical process itself become part of the artistic statement.
           </p>
-
           <p>
             I see myself as an artist who seeks to convey the contradictions of contemporary life through personal experiences, lived emotions, and a sensitive perception of the world. I am interested not only in what happens within society, but also in what happens to the individual within it: how people change, what they lose, what they come to worship, and whether they can preserve their individuality.
           </p>
-
           <p>
             I want to continue this investigation and explore these themes more deeply. I cannot yet say with certainty whether <em>Money Rules the World</em> will remain a standalone series or become the beginning of a broader exploration of human nature and society. What I do know is that I feel I have only just begun to speak about something truly important.
           </p>
@@ -548,7 +604,6 @@
      loading="lazy"
      decoding="async">
           </div>
-
           <div>
             <h2>Juliana Pogosian</h2>
             <p class="intro">
@@ -562,14 +617,12 @@
                 constructed compositions, I examine the values and
                 contradictions of modern society.
               </p>
-
               <p>
                 My artistic practice includes oil painting and digital
                 illustration. In my paintings, figurative imagery,
                 monumental symbols, and dramatic contrasts of light and
                 shadow transform complex social ideas into visual narratives.
               </p>
-
               <p>
                 My ongoing oil painting series, Money Rules the World,
                 investigates the influence of wealth on human desire,
@@ -578,7 +631,6 @@
                 inviting viewers to reflect on the systems that shape
                 contemporary life.
               </p>
-
               <p>
                 Rather than offering simple answers, I use my art to raise
                 questions about ambition, prosperity, responsibility, and
@@ -593,40 +645,31 @@
       <div class="container">
         <div class="section-label">05 — Biography</div>
         <h2>Biography</h2>
-
         <div class="story">
           <p>
             Juliana Pogosian is a contemporary artist and illustrator whose practice spans digital art, portrait illustration, and contemporary symbolism. Her work brings together years of professional experience in portraying the human figure with an exploration of social themes through traditional oil painting.
           </p>
-
           <p>
             Born in Samarkand, Uzbekistan, Pogosian grew up surrounded by the city’s rich architectural heritage. Its historic monuments, distinctive architecture, and atmosphere became part of her early visual experience. Her interest in drawing emerged in childhood, when she began creating portraits of family members, studying the human figure, and experimenting with humorous illustrations.
           </p>
-
           <p>
             In 2008, Pogosian graduated from Samarkand College of Information and Communication Technology and Industry, completing the full course of study in Computer Science and Information Technology. By decision of the State Attestation Commission, she qualified as a specialist in Information and Communication Systems.
           </p>
-
           <p>
             Although her initial education was in information technology, creativity had always remained an important part of her life. She developed her artistic skills independently through sustained practice and the study of drawing, composition, and digital painting using educational resources.
           </p>
-
           <p>
             In 2014, she began her professional career as an illustrator, specialising in digital portraits and caricatures. She worked at Photolamus from 2014 to 2019 and has continued her professional practice at Caricature24 since 2019, creating commissioned digital portraits and caricatures. This long-term experience has deepened her understanding of human anatomy, individual character, visual expression, and the narrative potential of imagery.
           </p>
-
           <p>
             In 2022, Pogosian enrolled at Moscow University for Industry and Finance “Synergy” to fulfil her long-held ambition of pursuing higher education in design. She is currently completing a degree in Design, specialising in Graphic Design and Virtual and Augmented Reality, and expects to graduate in January 2027 while continuing her professional work in digital art.
           </p>
-
           <p>
             In 2026, Pogosian turned to traditional oil painting as a means of developing an independent artistic voice. She is currently developing a practice in contemporary symbolism, exploring the relationships between money, power, ambition, and human identity.
           </p>
-
           <p>
             Her series <em>Money Rules the World</em> examines how money shapes society, influences perceptions of human worth, and becomes a symbol of power and devotion. Through metaphor, symbolic imagery, and carefully constructed compositions, Pogosian invites viewers to reflect on human nature and the structures of the contemporary world.
           </p>
-
           <p>
             She continues to develop her artistic language, bringing together her experience in digital art and her exploration of the expressive possibilities of traditional painting.
           </p>
@@ -640,37 +683,42 @@
         <p class="intro">
           For exhibition opportunities, collaborations, and enquiries about my work.
         </p>
-
-        <p style="margin-top: 28px;">
-          <a href="mailto:juliana.pogosian.art@proton.me"
-             style="color: var(--gold);">
-            juliana.pogosian.art@proton.me
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:juliana.pogosian.art@proton.me">
+            <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><path d="m4 7 8 6 8-6"></path></svg>
+            <span>juliana.pogosian.art@proton.me</span>
           </a>
-        </p>
-
-        <p style="margin-top: 16px;">
-          <a href="https://www.instagram.com/juliana_pogosian/"
-             target="_blank" rel="noopener noreferrer"
-             style="color: var(--text);">
-            Instagram ↗
+          <a class="contact-link" href="https://www.instagram.com/juliana_pogosian/" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.7" cy="6.6" r=".7" fill="currentColor" stroke="none"></circle></svg>
+            <span>Instagram ↗</span>
           </a>
-        </p>
-          <p style="margin-top: 16px;">
-            <a href="https://juliana_pogosian.artstation.com/"
-               target="_blank" rel="noopener noreferrer"
-               style="color: var(--text);">
-              ArtStation ↗
-            </a>
-          </p>
+          <a class="contact-link" href="https://juliana_pogosian.artstation.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="contact-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 19 12 5l7 14M8.5 12h7"></path></svg>
+            <span>ArtStation ↗</span>
+          </a>
+        </div>
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container footer-inner">
       <span>JULIANA POGOSIAN</span>
       <span>Money Rules the World · 2026</span>
     </div>
   </footer>
+  <script>
+    (() => {
+      const targets = document.querySelectorAll("main section h2, .work-image img, .story-image img, .process-grid > div, .detail-gallery > div, .portrait img");
+      if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          currentObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -28px 0px" });
+      targets.forEach((target) => { target.classList.add("reveal"); observer.observe(target); });
+    })();
+  </script>
 </body>
 </html>
